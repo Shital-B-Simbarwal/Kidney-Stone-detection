@@ -115,9 +115,9 @@ with torch.no_grad():
         all_labels.extend(labels.cpu().numpy())
         all_confidences.extend(probs.cpu().numpy())
 
-all_preds = np.array(all_preds)
-all_labels = np.array(all_labels)
-all_confidences = np.array(all_confidences)
+all_preds = np.array(all_preds).reshape(-1).astype(int)
+all_labels = np.array(all_labels).reshape(-1).astype(int)
+all_confidences = np.array(all_confidences).reshape(-1)
 
 accuracy = accuracy_score(all_labels, all_preds)
 precision, recall, f1, _ = precision_recall_fscore_support(all_labels, all_preds, average='binary', zero_division=0)
