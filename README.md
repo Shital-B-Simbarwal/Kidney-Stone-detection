@@ -10,6 +10,18 @@ The application provides a web interface where users can upload an image and vie
 
 The project includes a model training script, a prediction script, a trained model, a FastAPI backend, and a React frontend.
 
+## Application Screenshots
+
+### 1. Main Interface
+![Kidney Stone Detection Interface](screenshots/interface.png)
+
+### 2. Normal Prediction
+![Normal Prediction Result](screenshots/Normal-Prediction.png)
+
+### 3. Kidney Stone Prediction
+![Kidney Stone Prediction Result](screenshots/Stone-Prediction.png)
+
+
 ## Features
 
 - Classifies CT scan images into Normal and Kidney Stone categories.
