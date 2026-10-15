@@ -15,7 +15,7 @@ This project explores medical image classification using a convolutional neural 
 ## Project Structure
 
 ```text
-ct-scan-classifier/
+kidney-stone-detection/
 ├── Data/
 │   ├── train/
 │   │   ├── normal/
@@ -34,8 +34,8 @@ ct-scan-classifier/
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/Shital-B-Simbarwal/ct-scan-classifier.git
-   cd ct-scan-classifier
+   git clone https://github.com/Shital-B-Simbarwal/kidney-stone-detection.git
+   cd kidney-stone-detection
    ```
 
 2. Create and activate a virtual environment:
