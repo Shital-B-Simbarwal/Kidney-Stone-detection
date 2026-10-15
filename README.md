@@ -1,41 +1,41 @@
 # Kidney Stone Detection Using Deep Learning
 
-A deep learning project that classifies CT scan images into two categories: **Normal** and **Kidney Stone**, using PyTorch.
+A deep learning project that classifies CT scan images into two categories: **Normal** and **Kidney Stone**, using PyTorch and MobileNetV2 transfer learning.
 
 ## Project Overview
 
-This project explores medical image classification using a convolutional neural network (CNN). The model is trained on CT scan images to distinguish between normal scans and scans containing kidney stones.
+This project explores medical image classification using a pretrained convolutional neural network (MobileNetV2). The model is trained on CT scan images to distinguish between normal scans and scans containing kidney stones.
+
+The training script includes validation, loss and accuracy tracking, evaluation metrics, and saving the trained model weights.
 
 ## Tech Stack
 
 - **Language:** Python
 - **Deep Learning:** PyTorch, Torchvision
 - **Image Processing:** Pillow, NumPy
+- **Model Evaluation:** scikit-learn
 
 ## Project Structure
 
 ```text
 kidney-stone-detection/
-├── Data/
-│   ├── train/
-│   │   ├── normal/
-│   │   └── stone/
 ├── src/
 │   ├── training.py
 │   └── kidney_stone_model.pth
 ├── requirements.txt
+├── README.md
 └── .gitignore
 ```
 
-*Note: The dataset is not included in this repository.*
+**Note:** The dataset is not included in this repository. To train the model, organize the dataset into `Data/train/normal/` and `Data/train/stone/`.
 
 ## Installation
 
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/Shital-B-Simbarwal/kidney-stone-detection.git
-   cd kidney-stone-detection
+   git clone https://github.com/Shital-B-Simbarwal/Kidney-Stone-detection.git
+   cd Kidney-Stone-detection
    ```
 
 2. Create and activate a virtual environment:
@@ -44,10 +44,10 @@ kidney-stone-detection/
    python -m venv venv
    ```
 
-   Windows:
+   On Windows:
 
-   ```bash
-   venv\Scripts\activate
+   ```powershell
+   .\venv\Scripts\Activate.ps1
    ```
 
 3. Install the dependencies:
@@ -56,16 +56,26 @@ kidney-stone-detection/
    pip install -r requirements.txt
    ```
 
-## Model and Training
+## Model Training and Evaluation
 
-- `src/training.py` contains the model training code.
-- `src/kidney_stone_model.pth` contains the saved model weights.
-- The dataset is organized into `normal` and `stone` classes.
+Run the training script from the project root:
+
+```bash
+python src/training.py
+```
+
+The script uses MobileNetV2 pretrained weights and trains a binary classifier. It reports training and validation loss and accuracy for each epoch, followed by evaluation metrics including accuracy, precision, recall, F1-score, and a confusion matrix.
+
+The trained model weights are saved to:
+
+`src/kidney_stone_model.pth`
+
+**Note:** Training requires the dataset to be present in the expected directory structure. The script uses 80% of the available images for training and 20% for validation.
 
 ## Future Improvements
 
-- Add an image prediction script.
-- Evaluate the model using accuracy, precision, recall, and a confusion matrix.
+- Add a separate image prediction script.
+- Improve evaluation and report verified model performance.
 - Develop a simple web interface for image classification.
 
 ## Disclaimer
